@@ -1,13 +1,21 @@
 package com.testapp.nick.canadajson.model
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+import com.google.gson.annotations.Expose
+import com.google.gson.annotations.SerializedName
 
-@Entity(tableName = "canadafactstable")
+
 data class CanadaFactsDataModel (
-    @PrimaryKey
     var id: String,
+
+    @SerializedName("title")
+    @Expose
     var title: String?,
+
+    @SerializedName("description")
+    @Expose
     var description: String?,
+
+    @SerializedName("imageHref")
+    @Expose
     var imageHref : String?
 )

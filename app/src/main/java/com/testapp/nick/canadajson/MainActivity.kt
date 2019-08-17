@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.testapp.nick.canadajson.databinding.ActivityMainBinding
 import com.testapp.nick.canadajson.viewModel.CanadaFactsViewModel
@@ -12,6 +13,7 @@ import com.testapp.nick.canadajson.viewModel.CanadaFactsViewModel
 
 class MainActivity : AppCompatActivity() {
     lateinit var swipeContainer: SwipeRefreshLayout
+    lateinit var recyclerView: RecyclerView
     lateinit var canadaFactsViewModel: CanadaFactsViewModel
     lateinit var activityMainBinder : ActivityMainBinding
 
@@ -20,8 +22,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         activityMainBinder = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        val recyclerView = activityMainBinder.canadaList
-        val swipeContainer = activityMainBinder.swipeContainer
+        recyclerView = activityMainBinder.canadaList
+        swipeContainer = activityMainBinder.swipeContainer
 
         swipeContainer.setColorSchemeResources(
                 android.R.color.holo_blue_bright,
@@ -42,7 +44,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun setUpBindings(savedInstanceState: Bundle?) {
-       // canadaFactsViewModel = ViewModelProviders.of(this).get(CanadaFactsViewModel::class.java)
+        canadaFactsViewModel = ViewModelProviders.of(this).get(CanadaFactsViewModel::class.java)
 
         setupListUpdate()
     }

@@ -1,6 +1,6 @@
 package com.testapp.nick.canadajson.retrofit
 
-import com.testapp.nick.canadajson.model.CanadaFactsDataModel
+import com.testapp.nick.canadajson.model.CanadaFactsRowRawsModel
 import com.testapp.nick.canadajson.utils.Urls
 import retrofit2.Call
 import retrofit2.http.GET
@@ -17,5 +17,5 @@ import retrofit2.http.GET
  */
 interface ApiCallInterface {
     @GET(Urls.PATH)
-    fun getFacts(): Call<List<CanadaFactsDataModel>>
+    fun getFacts(): Call<List<CanadaFactsRowRawsModel>>
 }
