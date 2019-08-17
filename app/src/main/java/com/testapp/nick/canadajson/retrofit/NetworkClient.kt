@@ -10,11 +10,10 @@ import retrofit2.Response
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.Retrofit
 
-class NetworkClient(canadaFactsDataModel : CanadaFactsDataModel) : RetrofitCallInterface {
+class NetworkClient : RetrofitCallInterface {
 
     var retrofit: Retrofit? = null
     var TAG = "canadaApp"
-    var dataViewModel = canadaFactsDataModel
 
     override fun getRetrofitClient(): Retrofit {
         if (retrofit == null) {
@@ -26,7 +25,7 @@ class NetworkClient(canadaFactsDataModel : CanadaFactsDataModel) : RetrofitCallI
         return retrofit!!
     }
 
-    override fun fetchCanadaFacts() {
+    /*override fun fetchCanadaFacts() {
         val gson = Gson()
         val retrofit = getRetrofitClient()
         val restApi = retrofit.create(ApiCallInterface::class.java)
@@ -42,6 +41,6 @@ class NetworkClient(canadaFactsDataModel : CanadaFactsDataModel) : RetrofitCallI
                 }
             }
         })
-    }
+    }*/
 }
 
