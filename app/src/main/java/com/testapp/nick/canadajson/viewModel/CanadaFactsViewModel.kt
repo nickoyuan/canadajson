@@ -1,21 +1,20 @@
 package com.testapp.nick.canadajson.viewModel
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.testapp.nick.canadajson.model.CanadaFactsDataModel
-import com.testapp.nick.canadajson.retrofit.NetworkClient
+import com.testapp.nick.canadajson.model.CanadaFactsRowsModel
+import com.testapp.nick.canadajson.repository.CanadaFactsRepo
 
-class CanadaFactsViewModel(application : Application) : ViewModel() {
+class CanadaFactsViewModel : ViewModel() {
 
-     lateinit var networkClient: NetworkClient
+    lateinit var repository: CanadaFactsRepo
 
-   /* fun getCanadaFactsDataFromAPI() : LiveData<List<CanadaFactsDataModel>> {
-        return networkClient.fetchCanadaFacts()
-    }*/
+    init {
+        repository = CanadaFactsRepo()
+    }
 
-
-
+    fun getCanadaFactsDataFromAPI() : LiveData<List<CanadaFactsRowsModel>> {
+       return repository.getMutableLiveData()
+    }
 }
 
