@@ -3,10 +3,7 @@ package com.testapp.nick.canadajson.model
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-
 data class CanadaFactsDataModel (
-    var id: String,
-
     @SerializedName("title")
     @Expose
     var title: String?,

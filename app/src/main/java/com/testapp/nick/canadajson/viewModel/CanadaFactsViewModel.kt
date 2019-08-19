@@ -7,13 +7,13 @@ import com.testapp.nick.canadajson.repository.CanadaFactsRepo
 
 class CanadaFactsViewModel : ViewModel() {
 
-    lateinit var repository: CanadaFactsRepo
+    var repository: CanadaFactsRepo
 
     init {
         repository = CanadaFactsRepo()
     }
 
-    fun getCanadaFactsDataFromAPI() : LiveData<List<CanadaFactsRowsModel>> {
+    fun getCanadaFactsDataFromAPI() : LiveData<CanadaFactsRowsModel> {
        return repository.getMutableLiveData()
     }
 }

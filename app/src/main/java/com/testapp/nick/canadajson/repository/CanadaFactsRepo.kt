@@ -9,29 +9,30 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class CanadaFactsRepo  {
-    val TAG : String = "CanadaAPI"
-    var liveData : MutableLiveData<List<CanadaFactsRowsModel>> = MutableLiveData()
+class CanadaFactsRepo {
+    val TAG: String = "CanadaAPI"
+    var liveData: MutableLiveData<CanadaFactsRowsModel> = MutableLiveData()
 
 
-     fun getMutableLiveData() : MutableLiveData<List<CanadaFactsRowsModel>> {
+    fun getMutableLiveData(): MutableLiveData<CanadaFactsRowsModel> {
 
-         var retrofitApiCall = NetworkClient().getRetrofitClient()
+        var retrofitApiCall = NetworkClient().getRetrofitClient()
 
-         val restApi = retrofitApiCall.create(ApiCallInterface::class.java)
+        val restApi = retrofitApiCall.create(ApiCallInterface::class.java)
 
-         restApi.getFacts().enqueue(object : Callback<List<CanadaFactsRowsModel>> {
-             override fun onFailure(call: Call<List<CanadaFactsRowsModel>>?, t: Throwable?) {
-                 Log.e(TAG, "OOPS!! something went wrong.. " + t!!.message)
-             }
+        restApi.getFacts().enqueue(object : Callback<CanadaFactsRowsModel> {
+            override fun onFailure(call: Call<CanadaFactsRowsModel>?, t: Throwable?) {
+                Log.e(TAG, "OOPS!! something went wrong.. " + t!!.message)
+            }
 
-             override fun onResponse(call: Call<List<CanadaFactsRowsModel>>?, response: Response<List<CanadaFactsRowsModel>>?) {
+            override fun onResponse(call: Call<CanadaFactsRowsModel>, response: Response<CanadaFactsRowsModel>) {
+                liveData.value = response.body()!!
+            }
 
-             }
-         })
+        }
+        )
         return liveData
-     }
-
+    }
 
 
 }

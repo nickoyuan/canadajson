@@ -17,5 +17,5 @@ import retrofit2.http.GET
  */
 interface ApiCallInterface {
     @GET(Urls.PATH)
-    fun getFacts(): Call<List<CanadaFactsRowsModel>>
+    fun getFacts(): Call<CanadaFactsRowsModel>
 }
