@@ -12,13 +12,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-            <TextView
-                    android:layout_width="wrap_content"
+            <ImageView
+                    android:layout_width="match_parent"
                     android:layout_height="@dimen/canadadata_image_height"
-                    android:textSize="@dimen/canadadata_title_text_size"
-                    android:textColor="#000"
-                    android:id="@+id/canada_image"/>
-
+                    android:scaleType="centerCrop"
+                    android:adjustViewBounds="true"
+                    android:id="@+id/canada_image"
+                    android:src="@drawable/ic_launcher_background"/>
             <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

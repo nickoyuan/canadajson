@@ -10,5 +10,5 @@ data class CanadaFactsRowsModel (
 
     @SerializedName("rows")
     @Expose
-    var rows : List<CanadaFactsDataModel>
+    var rows : MutableList<CanadaFactsDataModel>
 )
