@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">canadajson</string>
+    <string name="title_of_json">About Canada: </string>
+    <string name="title_find_match">Find match</string>
+    <string name="transaction_name">Transaction Amount : </string>
 </resources>
