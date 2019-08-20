@@ -4,11 +4,10 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 data class CanadaFactsRowsModel (
-    @SerializedName("title")
-    @Expose
-    var title : String,
 
-    @SerializedName("rows")
     @Expose
-    var rows : MutableList<CanadaFactsDataModel>
+    @SerializedName("title") var title : String,
+
+    @Expose
+    @SerializedName("rows") var rows : MutableList<CanadaFactsDataModel>
 )

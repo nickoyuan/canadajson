@@ -33,9 +33,6 @@ class MainActivity : AppCompatActivity()  {
         )
         canadaFactsViewModel = ViewModelProviders.of(this).get(CanadaFactsViewModel::class.java)
         swipeContainer.setOnRefreshListener {
-            // Your code to refresh the list here.
-            // Make sure you call swipeContainer.setRefreshing(false)
-            // once the network request has completed successfully.
             setUpBindings()
         }
         setRecyclerView()
